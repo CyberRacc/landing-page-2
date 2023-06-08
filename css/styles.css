@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    max-height: 100vh;
+    font-family: 'Comfortaa', cursive;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    padding: 6px 12px;
+    background-color: rgb(193, 154, 255);
+}
+
+.header ul {
+    display: flex;
+    gap: 16px;
+}
+
+.header ul li {
+    list-style-type: none;
+}
+
+.logo {
+    font-size: 32px;
+}
+
+.info-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-left {
+    display: flex;
+    font-size: 24px;
+    padding-bottom: 16px;
+}
+
+.info-right {
+    display: flex;
+}
+
+.info-right img {
+    width: 300px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.image-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.image-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 250px;
+    flex-shrink: 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    padding: 6px 12px;
+    background-color: rgb(193, 154, 255);
+}
+

@@ -6,6 +6,7 @@ body {
     margin: 0;
     max-height: 100vh;
     font-family: 'Comfortaa', cursive;
+    background-color: #2b0936;
 }
 
 .header {
@@ -13,8 +14,9 @@ body {
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    padding: 6px 12px;
-    background-color: #e76f51;
+    padding: 16px 24px;
+    background-color: #272a59;
+    color: white;
 }
 
 .header ul {
@@ -26,6 +28,11 @@ body {
     list-style-type: none;
 }
 
+.links ul li a {
+    color: white;
+    text-decoration: none;
+}
+
 .logo {
     font-size: 32px;
 }
@@ -35,7 +42,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 32px;
-    background-color: #f4a261;
+    color: white;
 }
 
 .info-section {
@@ -89,7 +96,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 65px;
-    padding: 6px 12px;
-    background-color: #e76f51;
+    padding: 16px 24px;
+    background-color: #272a59;
+    color: white;
 }
 

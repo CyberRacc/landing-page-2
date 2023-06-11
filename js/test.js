@@ -7,3 +7,12 @@ function greet() {
 }
 
 button.addEventListener("click", greet);
+
+const myString = "123";
+const myNum = Number(myString);
+
+console.log(typeof myNum);
+
+let txt = "I can eat bananas all day";
+let x = txt.slice(10, -8);
+console.log(x);  // Outputs: bananas

@@ -196,4 +196,89 @@ The AND && operator does the following:
  The rules above are similar to OR. The difference is that AND returns
  the first falsy value whilst OR returns the first truthy value.
 
+ Examples:
+
+ // if the first operand is truthy,
+ // AND returns the second operand:
+ alert( 1 && 0); // 0
+ alert( 1 && 5); // 5
  
+ // if the first operand is falsy,
+ // AND returns it. The second operand is ignored
+ alert( null && 5); // null
+ alert( 0 && "no matter what" ); // 0
+
+We can also pass several values in a row. See how the first falsy one is returned:
+
+alert( 1 && 2 && null && 3); // null
+
+When all values are truthy, the last value is returned:
+
+alert( 1 && 2 && 3); // 3, the last one
+
+Precedence of AND && is higher than OR ||
+
+So the code a && b ?? c && d is essentially the same as if the && expressions were
+in brackets (a && b) || (c && d).
+
+### Don't replace if with || or && ###
+
+Sometimes, people use the AND && operator as a "shorter way to write if".
+
+For instance:
+
+let x = 1;
+
+(x > 0) && alert('Greater than zero!' );
+
+The action in the right part of && would execute only if the evaluation reaches it.
+That is, only if (x > 0) is true.
+
+So basicallyu we have an analogue for:
+
+let x = 1;
+
+if (x > 0) alert('Greater than zero!');
+
+Although the variant with && appears shorter (it's not and it doesn't), if is more
+obvious and readable.
+
+## ! (NOT) ##
+
+The boolean NOT operator is represented with an exclamation mark ! .
+
+The syntax is simple:
+
+result = !value;
+
+The operator accepts a single argument and does the following:
+
+1. Converts the operand to boolean type: true/false.
+2. Returns the inverse value.
+
+For instance:
+
+alert( !true ); // false
+alert( !0 ); // true
+
+A double NOT !! is sometimes used for converting a value to boolean type:
+
+alert( !!"non-empty string" ); // true
+alert( !!null ); // false
+
+That is, the first NOT converts the value to boolean and returns the inverse,
+and the second NOT inverses it again. In the end, we have a plain
+value to boolean conversion.
+
+There's a little more verbose way to do the same thing - a built-in Boolean function:
+
+alert( Boolean("non-empty string") ); // true
+alert( Boolean(null) ); // false
+
+The precedence of NOT ! is the highest of ALL logical operators, so it always
+executes first, before && or ||.
+
+if (!(age >= 14 && age <= 90));
+
+if (age < 14 || age > 90);
+

@@ -1,3 +1,4 @@
 function add7 () {
-    Number 
+    alert(Number + 7);
 }
+

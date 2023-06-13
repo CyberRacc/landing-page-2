@@ -106,15 +106,22 @@ alert( firstName || lastName || nickName || "Anonymous"); // Result is SuperCode
 
 If all variables were falsy, "Anonymous" would show up.
 
-The reason "SuperCoder" shows up is because it's the first truthy value in the expression. In JavaScript, an empty string ("") is considered falsy, which is equivalent to false in a boolean context. On the other hand, a non-empty string (like "SuperCoder") is considered truthy, which is equivalent to true in a boolean context.
+The reason "SuperCoder" shows up is because it's the first truthy value
+in the expression. In JavaScript, an empty string ("") is considered falsy,
+which is equivalent to false in a boolean context.
+On the other hand, a non-empty string (like "SuperCoder") is considered truthy,
+which is equivalent to true in a boolean context.
 
-So when JavaScript evaluates firstName || lastName || nickName || "Anonymous", it goes like this:
+So when JavaScript evaluates firstName || lastName || nickName || "Anonymous",
+it goes like this:
 
     firstName is "", which is falsy, so it moves on to the next value.
     lastName is also "", which is also falsy, so it moves on to the next value.
     nickName is "SuperCoder", which is truthy, so it stops and returns that value.
 
-Therefore, alert( firstName || lastName || nickName || "Anonymous") will alert "SuperCoder". If all the variables were empty strings (which are falsy), it would move all the way to the end and alert "Anonymous".
+Therefore, alert( firstName || lastName || nickName || "Anonymous") will
+alert "SuperCoder". If all the variables were empty strings (which are falsy),
+it would move all the way to the end and alert "Anonymous".
 
 To summarize, the || operator in JavaScript doesn't
 actually convert the values to booleans. Instead,
@@ -122,3 +129,71 @@ it checks each value from left to right and returns the first
 truthy value it encounters.
 If it doesn't find a truthy value, it returns the last value.
 
+## Short-circuit evaluation ##
+
+Another feature of the OR || operator is the so-called "short-circuit" evaluation.
+
+It means that || processes its arguments until the first truthy value is reached,
+and then the value is returned immediately, without even touching the other argument.
+
+the importance of this feature becomes obvious if an operand isn't just a value,
+but an expression with a side effect, such as a variable assignment or a function call.
+
+In the example below, only the second message is printed:
+
+true || alert("not printed");
+false || alert("printed");
+
+In the fist line, the OR || operator stops the evaluation immediately upon seeing true,
+so the alert isn't run.
+
+Sometimes, people use this feature to execude commands only if the condition on the
+left is falsy.
+
+#### && (AND) ####
+
+The AND operator is represented with two ampersands &&:
+
+result = a && n;
+
+In classical programming, AND returns true if both operands are truthy and false otherwise:
+
+alert( true && true ); // true
+alert( false && true); // false
+alert( true && false ); //false
+alert( false && false); //false
+
+An example with if:
+
+let hour = 12;
+let minute = 30;
+
+if (hour == 12 && minutes == 30) {
+  alert('The time is 12:30');
+}
+
+Just as with OR, any value is allowed as an operand of AND:
+
+if (1 && 0) { // evaluated as true && false
+  alert("won't work, because the result is falsy");
+}
+
+### AND "&&" finds the first falsy value ###
+
+Given multiple AND'ed values:
+
+result = value1 && value2 && value3;
+
+The AND && operator does the following:
+
+ - Evaluates operands from left to right.
+ - For each operand, converts it to a boolean, if the result is false,
+ stops and returns the original value of that operand.
+ - If all operands have been evaluated (i.e all were truthy), returns the last operand.
+
+ In other words, AND returns the first falsy value or the last value if none were found.
+
+ The rules above are similar to OR. The difference is that AND returns
+ the first falsy value whilst OR returns the first truthy value.
+
+ 

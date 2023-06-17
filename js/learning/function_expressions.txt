@@ -80,4 +80,117 @@
 
     1. The function declaration (1) creates the function and puts it
     into the variable named sayHi.
-    2. 
+    2. Line (2) copies it into the variable func. Please note again: there are no
+    brackets after sayHi. If there were, thien func = sayHi() would write
+    the result of the call sayHi() into func, not the function sayHi itself.
+    3. Now the function can be called as both sayHi() and func().
+
+    We could also have used a function expression to declare sayHi,
+    in the first line:
+
+    let sayHi = function() { // (1) create
+        alert("Hello");
+    };
+
+    let func = sayHi;
+    // ...
+
+    Everything would work the same.
+
+# Why is there a semi-colon at the end? #
+
+    You might wonder, why do function expressions have a semi-colon at the end,
+    but function declarations do not:
+
+    function sayHi() {
+        // ...
+    }
+
+    let sayHi = function() {
+       // ...
+    };
+
+    The answer is simple: a function expression is created here as
+    function(...) {...} inside the assignment statement:
+    let sayHi = ...;. The semicolon ; is recommended at the end of the statement,
+    it's not part of the function syntax.
+
+    The semicolon would be there for a simpler assignment, such as let sayHi = 5;
+    and it's also there for a function assignment.
+
+## Callback Functions ##
+
+    Let's look at more examples of passing functions as values and using function
+    expressions.
+
+    We'll write a function ask(question, yes, no) with three parameters:
+
+    question
+    text of the question
+    
+    yes
+    Function to run if the answer is "Yes"
+
+    The function should ask the question and, depending on the user's
+    answer, call yes() or no():
+
+    function ask(question, yes, no) {
+        if (confirm(question)) yes()
+        else no();
+    }
+
+    function showOkay() {
+        alert("You agreed.");
+    }
+
+    function showCancel() {
+        alert("You cancelled the execution");
+    }
+
+    // usage: functions showOkay, showCancel are passed as arguments to ask.
+    ask("Do you agree?", showOkay, showCancel);
+
+    In practice, such functions are quite useful. The major difference
+    between a real-life ask and the example above is that real-life
+    functions use more complex ways to interact with the user than a simple
+    confirm. In the browser, such functions usually draw a nice-looking
+    question window. But that's another story.
+
+    The arguments showOkay and showCancel of ask are called callback functions
+    or just callbacks.
+
+    The idea is that we pass a function and expect it to be "called back"
+    later if necessary. In our case, showOkay becomes the callback for "yes",
+    and showCancel for "no".
+
+    We can use function expressions to write an equivalent, shorter function:
+
+    function ask(question, yes, no) {
+        if (confirm(question)) yes()
+        else no();
+    }
+
+    ask(
+        "Do you agree?",
+        function() { alert("You agreed.");}
+        function() { alert("You cancelled the execution."); }
+    )
+
+    Here, functions are declared right inside the ask(...) call. They have
+    no name, and so are called anonymous. Such functions are not accessible
+    outside of ask (because they are not assigned to variables), but that'same
+    just what we want here.
+
+    Such code appears in our scripts very naturally, it's in the spirit of JavaScript.
+
+# A function is a value representing an "action" #
+
+    Regular values like strings or numbers represent the data.
+
+    A function can be perceived as an action.
+
+    We can pass it between variables and run when we want.
+
+## Function Expression vs Function Declaration ##
+
+    

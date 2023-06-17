@@ -36,4 +36,4 @@ context of the following example function:
  nothing would appear in the console but nonetheless the function would
  return that string.
 
- 
+

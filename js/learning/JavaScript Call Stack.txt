@@ -87,3 +87,10 @@
         When the data is available, display it on the webpage.
 
     To do this, the JavaScript engine uses an event loop.
+
+## Summary ##
+
+    JavaScript engine uses a call stack to manage execution contexts.
+
+    The call stack uses the stack data structure that works based on
+    the LIFO (last-in-first-out) principle.

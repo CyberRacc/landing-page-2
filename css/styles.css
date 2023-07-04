@@ -52,11 +52,20 @@ body {
     align-items: center;
 }
 
-.sign-up button{
+.sign-up button {
     padding: 12px;
     color: white;
     background-color: #272a59;
     border: 4px solid white;
+    border-radius: 12px;
+    margin-top: 18px;
+}
+
+.sign-up-hover {
+    padding: 12px;
+    color: white;
+    background-color: #272a59;
+    border: 8px solid blue;
     border-radius: 12px;
     margin-top: 18px;
 }

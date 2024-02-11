@@ -1,0 +1,93 @@
+:root {
+    --dark-background-color: #1f2937;
+    --hero-main-text-size: 48px;
+    --hero-main-text-weight: 800;
+    --hero-main-text-color: #f9faf8;
+    --hero-secondary-text-size: 18px;
+    --hero-secondary-text-color: #e5e7eb;
+    --header-logo-text-size: 24px;
+    --header-logo-text-color: #f0faf8;
+    --button-color: #3882f6;
+    --information-header-text-size: 36px;
+    --information-header-text-weight: 800;
+    --information-header-text-color: #1f2937;
+    --quote-section-color: #e5e7eb;
+    --quote-text-size: 36px;
+    --quote-text-weight: 300;
+    --quote-text-style: italic;
+    --quote-text-color: #1f2937;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style-type: none;
+}
+
+header ul li {
+    margin: 0 10px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#site-intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: var(--dark-background-color);
+    color: var(--hero-main-text-color);
+}
+
+#site-intro-welcome {
+    
+}
+
+#site-intro-container img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+}
+
+#site-cards {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+}
+
+.site-card {
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 12px;
+    width: 30%;
+    text-wrap: wrap;
+    width: 100px;
+    height: auto;
+}
+
+.site-card img {
+    border: 4px blue solid;
+    border-radius: 12px;
+    width: 100px;
+    height: 100px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--button-color);
+    color: #fff;
+    cursor: pointer;
+}

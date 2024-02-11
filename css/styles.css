@@ -18,9 +18,20 @@
     --quote-text-color: #1f2937;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section-container {
+    padding: 60px 0;
+}
+
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 20px 0;
 }
@@ -45,19 +56,30 @@ header ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0;
+    padding: 60px 0;
+    gap: 48px;
     background-color: var(--dark-background-color);
     color: var(--hero-main-text-color);
 }
 
 #site-intro-welcome {
-    
+    width: 500px;
 }
 
 #site-intro-container img {
-    width: 300px;
-    height: auto;
     border-radius: 12px;
+    width: 600px; /* Set the width to the desired value */
+    height: 300px; /* Set the height to the desired value */
+    object-fit: cover; /* This will crop the image to fit the container without stretching */
+    object-position: top; /* This will center the image within the container */
+}
+
+#site-cards-container {
+    text-align: center;
+    flex-direction: column;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
 }
 
 #site-cards {
@@ -68,12 +90,15 @@ header ul li a {
 
 .site-card {
     padding: 20px;
-    border: 1px solid #000;
     border-radius: 12px;
     width: 30%;
     text-wrap: wrap;
     width: 100px;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .site-card img {
@@ -83,6 +108,10 @@ header ul li a {
     height: 100px;
 }
 
+.site-card p {
+    text-align: left;
+}
+
 button {
     padding: 10px 20px;
     border: none;
@@ -90,4 +119,59 @@ button {
     background-color: var(--button-color);
     color: #fff;
     cursor: pointer;
+}
+
+#quote-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    background-color: var(--quote-section-color);
+}
+
+#quote-container p {
+    font-size: var(--quote-text-size);
+    font-weight: var(--quote-text-weight);
+    font-style: var(--quote-text-style);
+    color: var(--quote-text-color);
+}
+
+#quote-container :last-child {
+    margin-top: 20px;
+}
+
+#call-to-action-container {
+    background-color: var(--button-color);
+    color: var(--hero-main-text-color);
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 12px;
+}
+
+#call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+}
+
+#call-to-action-text {
+    width: 50%;
+}
+
+#call-to-action-container button {
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 125px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: var(--dark-background-color);
+    color: var(--hero-main-text-color);
 }
